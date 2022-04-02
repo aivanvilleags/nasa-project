@@ -13,7 +13,7 @@ const MONGO_URL = "mongodb+srv://nasa-api:Yku5n2iBozqCloyj@cluster0.ow4vv.mongod
 const server = http.createServer(app);
 
 mongoose.connection.once('open',() => {
-    console.log("MongoDB conection ready!");
+    console.log("MongoDB connection ready!");
 })
 
 mongoose.connection.on('error', (err) => {
