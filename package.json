@@ -7,11 +7,11 @@
     "install-server": "npm install --prefix server",
     "install-client": "npm install --prefix client",
     "install": "npm run install-server && npm run install-client",
-    "server":"npm run watch --prefix server",
-    "client":"npm start --prefix client",
+    "server": "npm run watch --prefix server",
+    "client": "npm start --prefix client",
     "watch": "npm run server & npm run client",
-    "deploy":"npm run build --prefix client && npm start --prefix server",
-    "deploy-cluster":"npm run build --prefix client && npm run cluster --prefix server",
+    "deploy": "npm run build --prefix client && npm start --prefix server",
+    "deploy-cluster": "npm run build --prefix client && npm run cluster --prefix server",
     "test": "npm test --prefix server && npm test --prefix client"
   },
   "repository": {
@@ -24,5 +24,8 @@
   "bugs": {
     "url": "https://github.com/aivanvilleags/nasa-project/issues"
   },
-  "homepage": "https://github.com/aivanvilleags/nasa-project#readme"
+  "homepage": "https://github.com/aivanvilleags/nasa-project#readme",
+  "dependencies": {
+    "axios": "^0.26.1"
+  }
 }
