@@ -6,12 +6,18 @@ on:
     branches: [main]
 jobs:
   build:
+    env:
+      CI: true
+    strategy:
+      matrix:
+        node-version: [16.x, 17.x]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Use nodejs version 16
+      - name: Use nodejs version ${{matrix.node-version}}
         uses: actions/setup-node@v2
         with:
-          node-version: "17.7.1"
+          node-version: ${{matrix.node-version}}
       - run: npm install
       - run: npm run build --prefix client
+      - run: npm test
